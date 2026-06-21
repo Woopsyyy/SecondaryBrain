@@ -6,20 +6,28 @@ matching project cluster → reuse documented patterns → update after meaningf
 
 ## Project clusters
 
-### Himawari SMP
-Fabric Minecraft server mod (`com.survivalmod` / `survivalmod`). MC 26.2, Java 25, Fabric Loom.
-Built from WSL; `deployToMods` auto-copies the jar to the live server
-(`D:\Minecraft Server\HimawariSMP_1\mods`). Hub: [[Himawari-SMP]].
-Nodes: [[trial-item-expiry]], [[shop-catalog]], [[combat-status]], [[sell-and-economy]].
+### Himawari (Bot + Mod + shared DB)
+The WopsSMP system: one repo, **two projects** joined by **one shared Supabase project** ("Mod",
+`tdmzxxyctqnxxkdulvar`). Top hub: [[Himawari-System]].
+- [[Himawari-Bot]] — Discord bot (Node.js / discord.js 14), deploys to Discloud.
+- [[Himawari-SMP]] — Fabric Minecraft mod (`com.survivalmod`, MC 26.2, Java 25); built from WSL,
+  `deployToMods` auto-copies the jar to `D:\Minecraft Server\HimawariSMP_1\mods`.
+- [[shared-supabase]] — the bridge: linking, mod live-config, backups, bot ticket/embed tables.
+Feature nodes: [[shop-catalog]], [[combat-status]], [[sell-and-economy]], [[trial-item-expiry]].
 
 ## Dependency graph
 ```mermaid
 graph TD
-  Global[GLOBAL-PROJECT-MEMORY] --> Himawari[[Himawari-SMP]]
-  Himawari --> Trial[[trial-item-expiry]]
-  Himawari --> Shop[[shop-catalog]]
-  Himawari --> Combat[[combat-status]]
-  Himawari --> Sell[[sell-and-economy]]
+  Global[GLOBAL-PROJECT-MEMORY] --> Sys[[Himawari-System]]
+  Sys --> Bot[[Himawari-Bot]]
+  Sys --> Mod[[Himawari-SMP]]
+  Sys --> Supa[[shared-supabase]]
+  Bot --> Supa
+  Mod --> Supa
+  Mod --> Shop[[shop-catalog]]
+  Mod --> Combat[[combat-status]]
+  Mod --> Sell[[sell-and-economy]]
+  Mod --> Trial[[trial-item-expiry]]
 ```
 
 ## Evolution timeline
@@ -36,6 +44,12 @@ graph TD
   - [[shop-catalog]] — five new survival buy/sell tabs backed by a new Supabase `shop_catalog` table
     (339 rows seeded via the Supabase MCP, project `tdmzxxyctqnxxkdulvar`).
   - Earlier 1.0.15 work was never deployed; this is the first bundle carrying all of the above.
+  - Shop catalog extended with concrete-powder (×16), `powder_snow_bucket`, and the netherite raws
+    (ancient_debris/scrap/ingot/block) in Resources — 360 `shop_catalog` rows total.
+- **2026-06-21** — Documented the **whole system architecture** in the vault: added [[Himawari-System]]
+  (top hub), [[Himawari-Bot]] (Discord side), and [[shared-supabase]] (the shared DB + linking flow);
+  expanded [[Himawari-SMP]] into a full 29-package subsystem map. The cluster now spans bot + mod +
+  shared DB, not just the mod.
 
 ## Deprecated nodes
 _(none yet)_

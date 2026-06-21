@@ -42,7 +42,8 @@ These sit alongside the curated tabs (gear, utilities, trial, potions, spawners)
   `shop_catalog` so live price edits push), `gui/ShopMenu.java`, `command/ModCommands.java`.
 - Seed + DDL: `SMP/docs/supabase/seed_shop_catalog.sql` (idempotent `create table if not exists` +
   RLS anon-read + realtime + `insert ... on conflict do update`). Seeded live via the Supabase MCP
-  to project `tdmzxxyctqnxxkdulvar` ("Mod"), 339 rows.
+  to project `tdmzxxyctqnxxkdulvar` ("Mod"), 360 rows (incl. concrete-powder ×16, `powder_snow_bucket`,
+  and the netherite raws ancient_debris/scrap/ingot/block in Resources — armour/tools stay in /gear).
 
 ## Related
 [[combat-status]] · [[sell-and-economy]] · [[trial-item-expiry]]
