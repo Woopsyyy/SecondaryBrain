@@ -14,7 +14,7 @@ The WopsSMP system: one repo, **two projects** joined by **one shared Supabase p
   `deployToMods` auto-copies the jar to `D:\Minecraft Server\HimawariSMP_1\mods`.
 - [[shared-supabase]] — the bridge: linking, mod live-config, backups, bot ticket/embed tables.
 Feature nodes: [[shop-catalog]], [[combat-status]], [[sell-and-economy]], [[trial-item-expiry]],
-[[auction-marketplace]].
+[[auction-marketplace]], [[moderation-bans]], [[admin-investigator]], [[bounties]].
 
 ## Dependency graph
 ```mermaid
@@ -54,6 +54,15 @@ graph TD
 - **2026-06-21** — Auction house got a GUI **Create Listing** wizard (item-from-inventory → amount →
   price-each → review), mirroring the buy-order wizard. New node [[auction-marketplace]]. Built &
   deployed as `survivalmod-1.0.17.jar`.
+- **2026-06-22** — Staff & economy batch (`survivalmod-1.0.18.jar`): cash amounts accept k/m/b/t
+  (`/pay`,`/cash`,`/bounty`); ranks collapsed to **owner + mod**, owner commands work without OP
+  (`isOwnerSource`), `/revenue` owner-only; new **/admin investigator** book + board
+  ([[admin-investigator]]); **ban/mute** mod-enforced + Supabase ([[moderation-bans]]); **bounties**
+  with PvP-kill payout + heads GUI ([[bounties]]). New Supabase tables `banned_players`,
+  `muted_players`, `investigations`.
+  - ⚠️ Deploy note: the server folder was renamed `HimawariSMP_1` → `HimawariSMP`; `modsDir` updated to
+    `/mnt/d/Minecraft Server/HimawariSMP/mods`. WSL `/mnt/d` had gone stale, so 1.0.18 was copied to the
+    live mods folder from Windows.
 
 ## Deprecated nodes
 _(none yet)_

@@ -26,6 +26,9 @@ Minecraft account and a Discord account, and the mod's live-config + backup stor
 trial, economy, discord, …), `market`.
 **Backups** (mod writes, service key): `auction_listings` + `auction_meta`, `order_listings`,
 `map_arts` (+ storage bucket for map art).
+**Moderation mirror** (mod local-primary, service-key writes, anon read at boot): `banned_players`,
+`muted_players`, `investigations` — see [[moderation-bans]] / [[admin-investigator]] and
+`docs/supabase/schema_moderation.sql`.
 **Bot-owned** (bot writes, service key): `tickets` + `ticket_config`, `embeds`,
 `guild_event_messages` (greet/leave/boost).
 

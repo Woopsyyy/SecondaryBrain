@@ -43,8 +43,13 @@ hook, and load/save lifecycle. Commands in `command/ModCommands.java` (Brigadier
 - `rank/` — `Ranks`, `RankConfig`, `PermissionManager`, `TabListExtension` (ranks/perms/tab list).
 - `stats/` — `StatsStore`/`PlayerStats` (kills/deaths/playtime). `player/` — `FirstJoinStore`.
 - `prefs/` — `PlayerPrefs` (e.g. auto-accept TPA). `afk/` — `AfkManager`.
-- `scoreboard/` — `Sidebar`, `HiddenLines`, `ScoreboardConfig`. `moderation/` — `MuteManager`.
+- `scoreboard/` — `Sidebar`, `HiddenLines`, `ScoreboardConfig`.
+- `moderation/` — `MuteManager` + `BanManager` (Supabase-mirrored); `investigation/` — the /admin
+  cheater board; `bounty/` — pooled PvP bounties. → [[moderation-bans]], [[admin-investigator]],
+  [[bounties]].
 - `link/` — `LinkManager` (in-game `/link`). `discord/` — `DiscordManager`/`Config` (mod→Discord).
+- Ranks are **owner + mod** only; owner commands work with or without OP (`isOwnerSource`). Cash
+  amounts accept k/m/b/t (`economy/Amounts`).
 
 **Infra**
 - `supabase/` — `SupabaseClient` (REST), `RemoteConfig` (config seam), `SupabaseRealtime` (live WS),
