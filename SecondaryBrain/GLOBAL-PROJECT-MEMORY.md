@@ -13,7 +13,8 @@ The WopsSMP system: one repo, **two projects** joined by **one shared Supabase p
 - [[Himawari-SMP]] — Fabric Minecraft mod (`com.survivalmod`, MC 26.2, Java 25); built from WSL,
   `deployToMods` auto-copies the jar to `D:\Minecraft Server\HimawariSMP_1\mods`.
 - [[shared-supabase]] — the bridge: linking, mod live-config, backups, bot ticket/embed tables.
-Feature nodes: [[shop-catalog]], [[combat-status]], [[sell-and-economy]], [[trial-item-expiry]].
+Feature nodes: [[shop-catalog]], [[combat-status]], [[sell-and-economy]], [[trial-item-expiry]],
+[[auction-marketplace]].
 
 ## Dependency graph
 ```mermaid
@@ -50,6 +51,9 @@ graph TD
   (top hub), [[Himawari-Bot]] (Discord side), and [[shared-supabase]] (the shared DB + linking flow);
   expanded [[Himawari-SMP]] into a full 29-package subsystem map. The cluster now spans bot + mod +
   shared DB, not just the mod.
+- **2026-06-21** — Auction house got a GUI **Create Listing** wizard (item-from-inventory → amount →
+  price-each → review), mirroring the buy-order wizard. New node [[auction-marketplace]]. Built &
+  deployed as `survivalmod-1.0.17.jar`.
 
 ## Deprecated nodes
 _(none yet)_

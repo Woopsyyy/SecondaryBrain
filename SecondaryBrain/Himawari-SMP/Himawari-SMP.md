@@ -23,8 +23,8 @@ hook, and load/save lifecycle. Commands in `command/ModCommands.java` (Brigadier
 - `economy/` — `EconomyStore` (balances), `EconomyConfig`, `EconomyValidator` (craft-arbitrage guard).
 - `shop/` — `ShopManager`, `ShopPrices`, `PriceLoreManager`, `Enchants`. → [[sell-and-economy]],
   [[shop-catalog]].
-- `auction/` — `AuctionStore`/`Config`/`Listing` (player auction house, Supabase-backed).
-- `order/` — `OrderStore`/`Order` (buy-order marketplace, Supabase-backed).
+- `auction/` + `order/` — player auction house + buy-order marketplace (Supabase-backed), both with
+  4-step create wizards. → [[auction-marketplace]].
 - `spawner/` — custom internal-loot spawners (`Manager`/`Config`/`Nbt`/`Items`/`Store`).
 - `potion/` — `PotionItems` + `PotionBuffStore` (custom 24h Haste/Speed/Strength buffs).
 
