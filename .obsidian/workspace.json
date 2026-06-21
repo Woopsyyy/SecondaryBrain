@@ -37,7 +37,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"tags\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -150,21 +150,41 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "HimawariSMP/Bot Docs/superpowers/specs/2026-06-09-discord-webhooks-design.md",
+                "file": "SecondaryBrain/Himawari/00-overview.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2026-06-09-discord-webhooks-design"
+              "title": "Outline of 00-overview"
+            }
+          },
+          {
+            "id": "48a06679bf6bfc6f",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
+          },
+          {
+            "id": "2372363ea48a8868",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -174,47 +194,50 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "realclaudian:Open Claudian": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b0f270e9163aa3c8",
+  "active": "3b915e4b9d4fac7b",
   "lastOpenFiles": [
-    "AI - brain 1",
-    "AI - brain",
-    "Untitled.base",
-    "HimawariSMP/Bot Docs/superpowers/specs/2026-06-09-discord-webhooks-design.md",
-    "Untitled 1.base",
-    "Untitled 2.base",
-    "Library/system-memory.md",
-    "Library/README.md",
-    "Library",
-    "HimawariSMP/SMP README.md",
-    "HimawariSMP/SMP CONTRIBUTING.md",
-    "HimawariSMP/gradle.properties.md",
-    "HimawariSMP/Bot Docs/superpowers/specs/2026-06-09-shop-reorg-buy-sell-trial-design.md",
+    "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.2264.612c35ccb03b",
+    "SecondaryBrain/Himawari-SMP/shared-supabase.md",
+    "SecondaryBrain/Himawari-SMP/Himawari-Bot.md",
+    "SecondaryBrain/Himawari-SMP/Himawari-Bot.md.tmp.2264.05a4151ced2b",
+    "SecondaryBrain/Himawari-SMP/Himawari-System.md",
+    "SecondaryBrain/Himawari-SMP/Himawari-System.md.tmp.2264.1907c1da7ec6",
+    "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.2264.fe36a38cb815",
+    "SecondaryBrain/Himawari-SMP/sell-and-economy.md",
+    "SecondaryBrain/Himawari-SMP/combat-status.md",
+    "SecondaryBrain/Himawari-SMP/combat-status.md.tmp.2264.8fac9c34dc1c",
+    "SecondaryBrain/Himawari-SMP/shop-catalog.md",
+    "SecondaryBrain/Himawari-SMP/trial-item-expiry.md",
+    "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md",
+    "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.6796.22d8b1225ecf",
+    "SecondaryBrain/Himawari-SMP/trial-item-expiry.md.tmp.6796.27c114ce0df4",
+    "SecondaryBrain/_ManualPrompting/README.md",
+    "SecondaryBrain/Himawari-SMP/Himawari-SMP.md",
+    "SecondaryBrain/Himawari-SMP/Himawari-SMP.md.tmp.6796.1dca4f66f880",
+    "SecondaryBrain/Himawari-SMP",
+    "SecondaryBrain/_System/reference-architecture-protocol.md",
+    "SecondaryBrain/_ManualPrompting/01-project-handoff-template.md",
+    "SecondaryBrain/_ManualPrompting/00-system-prompt.md",
+    "SecondaryBrain/_System/reference-architecture-protocol.md.tmp.25344.9bcda823a5f9",
+    "SecondaryBrain/_System",
+    "SecondaryBrain/START HERE/🔥 MASTER AI PROJECT ARCHITECT + SCALABLE MEMORY SYSTEM.md",
     "Untitled.canvas",
-    "HimawariSMP/Bot Docs/commands.md",
-    "HimawariSMP/Bot Docs/superpowers/specs/2026-06-13-shop-rtp-config-overhaul-design.md",
-    "HimawariSMP/Bot Docs/superpowers/specs/2026-06-08-supabase-config-migration-design.md",
-    "HimawariSMP/Bot Docs/superpowers/plans/2026-06-09-shop-reorg-buy-sell-trial.md",
-    "HimawariSMP/Bot Docs/superpowers/plans/2026-06-09-discord-webhooks.md",
-    "HimawariSMP/Bot Docs/superpowers/plans/2026-06-08-smp-sleep-afk-spawner-shop.md",
-    "HimawariSMP/SMP Mod Docs/superpowers/specs/2026-06-05-rtp-safety-combat-design.md",
-    "HimawariSMP/SMP Mod Docs/superpowers/specs/2026-06-06-shop-rebalance-design.md",
-    "HimawariSMP/SMP Mod Docs/superpowers/specs/2026-06-04-survivalmod-update-design.md",
-    "HimawariSMP/SMP Mod Docs/superpowers/plans/2026-06-05-rtp-safety-combat.md",
-    "HimawariSMP/SMP Mod Docs/superpowers/plans/2026-06-04-survivalmod-update.md",
-    "HimawariSMP/SMP Mod Docs/superpowers/specs",
-    "HimawariSMP/SMP Mod Docs/superpowers/plans",
-    "HimawariSMP/SMP Mod Docs/supabase/seed_shop.sql",
-    "HimawariSMP/SMP Mod Docs/supabase/seed_modconfig.sql",
-    "HimawariSMP/SMP Mod Docs/supabase/seed.sql",
-    "HimawariSMP/SMP Mod Docs/supabase/README.md",
-    "HimawariSMP/SMP Mod Docs/linking.md",
-    "HimawariSMP/SMP Mod Docs/config.md",
-    "HimawariSMP/SMP Mod Docs/commands.md",
-    "HimawariSMP/Bot Docs/superpowers/specs/2026-06-18-embed-builder-greet-leave-boost-design.md",
-    "HimawariSMP/Bot Docs/superpowers/specs/2026-06-17-link-ping-avatar-supabase-design.md",
-    "HimawariSMP/Bot Docs/superpowers/specs/2026-06-17-link-lifecycle-linked-role-design.md"
+    "Untitled 1.canvas",
+    "SecondaryBrain/Himawari/00-overview.md",
+    "Obsidian link.md",
+    "Ai - skills/Himawari/automation-skills.md",
+    "Ai - skills/Himawari/deployment-patterns.md",
+    "Ai - skills/Himawari/security-patterns.md",
+    "Ai - skills/Himawari/architecture-patterns.md",
+    "Ai - skills/Himawari/database-patterns.md",
+    "Ai - skills/Himawari/api-patterns.md",
+    "Ai - skills/Himawari/auth-patterns.md",
+    "SecondaryBrain/Himawari/modules/api.md",
+    "SecondaryBrain/Himawari/modules/core.md"
   ]
 }
