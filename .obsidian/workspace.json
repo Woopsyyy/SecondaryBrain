@@ -11,10 +11,13 @@
             "id": "3b915e4b9d4fac7b",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "bases",
+              "state": {
+                "file": "Untitled.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Untitled"
             }
           }
         ]
@@ -201,6 +204,9 @@
   },
   "active": "3b915e4b9d4fac7b",
   "lastOpenFiles": [
+    "2026-06-22.md",
+    "Untitled.base",
+    "Untitled.canvas",
     "SecondaryBrain/Himawari-SMP/moderation-bans.md",
     "SecondaryBrain/Himawari-SMP/audit-log.md",
     "SecondaryBrain/Himawari-SMP/shared-supabase.md",
@@ -229,15 +235,11 @@
     "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.6796.22d8b1225ecf",
     "SecondaryBrain/Himawari-SMP/trial-item-expiry.md.tmp.6796.27c114ce0df4",
     "SecondaryBrain/Himawari-SMP/Himawari-SMP.md",
-    "SecondaryBrain/Himawari-SMP/Himawari-SMP.md.tmp.6796.1dca4f66f880",
     "SecondaryBrain/START HERE/🔥 MASTER AI PROJECT ARCHITECT + SCALABLE MEMORY SYSTEM.md",
-    "Untitled.canvas",
     "Untitled 1.canvas",
     "SecondaryBrain/Himawari/00-overview.md",
     "Obsidian link.md",
     "Ai - skills/Himawari/deployment-patterns.md",
-    "Ai - skills/Himawari/security-patterns.md",
-    "Ai - skills/Himawari/architecture-patterns.md",
-    "Ai - skills/Himawari/database-patterns.md"
+    "Ai - skills/Himawari/security-patterns.md"
   ]
 }
