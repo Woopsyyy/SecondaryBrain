@@ -14,7 +14,7 @@ The WopsSMP system: one repo, **two projects** joined by **one shared Supabase p
   `deployToMods` auto-copies the jar to `D:\Minecraft Server\HimawariSMP_1\mods`.
 - [[shared-supabase]] — the bridge: linking, mod live-config, backups, bot ticket/embed tables.
 Feature nodes: [[shop-catalog]], [[combat-status]], [[sell-and-economy]], [[trial-item-expiry]],
-[[auction-marketplace]], [[moderation-bans]], [[admin-investigator]], [[bounties]].
+[[auction-marketplace]], [[moderation-bans]], [[admin-investigator]], [[bounties]], [[audit-log]].
 
 ## Dependency graph
 ```mermaid
@@ -60,9 +60,15 @@ graph TD
   ([[admin-investigator]]); **ban/mute** mod-enforced + Supabase ([[moderation-bans]]); **bounties**
   with PvP-kill payout + heads GUI ([[bounties]]). New Supabase tables `banned_players`,
   `muted_players`, `investigations`.
-  - ⚠️ Deploy note: the server folder was renamed `HimawariSMP_1` → `HimawariSMP`; `modsDir` updated to
-    `/mnt/d/Minecraft Server/HimawariSMP/mods`. WSL `/mnt/d` had gone stale, so 1.0.18 was copied to the
-    live mods folder from Windows.
+- **2026-06-22** — Staff-tool hardening + audit (`survivalmod-1.0.19.jar`): `/cash` reverted to
+  owner-**with-OP**; Investigator (and new owner-only **/log**) books are **destroyed on drop** and
+  **rank-gated on use** (so a stolen tool is useless); a **command audit log** records every mod/owner
+  command (mixin on `Commands.performPrefixedCommand`), reviewed via the /log book → staff heads →
+  recent commands. New node [[audit-log]].
+  - ⚠️ Deploy/drive note: the live server folder name flaps between `HimawariSMP_1` and `HimawariSMP`
+    (same folder, renamed; WSL `/mnt/d` also goes stale). It is `HimawariSMP_1` again now; `modsDir`
+    reverted to `/mnt/d/Minecraft Server/HimawariSMP_1/mods` and 1.0.19 copied there from Windows.
+    Confirm the live `mods` folder before each deploy.
 
 ## Deprecated nodes
 _(none yet)_

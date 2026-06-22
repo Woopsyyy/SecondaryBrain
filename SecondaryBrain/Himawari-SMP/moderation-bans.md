@@ -7,8 +7,9 @@ Part of [[Himawari-SMP]].
   dropped the `admin` tier; `rank/PermissionManager` still resolves `smp.owner > smp.mod > smp.player`
   (the `smp.admin` node remains for back-compat but isn't a tier).
 - **Owner-without-OP**: new `ModCommands.isOwnerSource` = OP **or** `smp.owner`. Owner-tier commands use
-  it so the owner rank works without OP: `/cash`, `/rank`, `/revenue`, `/economy`, `/spawner give`,
-  `/mapart delete`. (`/version` stays OP-only.) `/revenue` moved from `smp.admin` → owner.
+  it so the owner rank works without OP: `/rank`, `/revenue`, `/economy`, `/spawner give`,
+  `/mapart delete`. (`/version` **and** `/cash` stay owner-**with-OP** only.) `/revenue` moved from
+  `smp.admin` → owner.
 - Staff commands regated to `smp.mod` (mods + owner): `/mute`, `/unmute`, `/ban`, `/unban`, `/admin`,
   `/balance <other>`.
 

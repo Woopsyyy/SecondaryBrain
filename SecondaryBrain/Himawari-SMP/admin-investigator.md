@@ -25,5 +25,10 @@ players "under investigation", grouped by category, with one-click spectate-tele
   primary**, mirrored to the Supabase `investigations` table (service-key writes, anon read merged at
   boot). `SupabaseClient.fetch/insert/deleteInvestigationsByPlayer`.
 
+## Staff-tool safety (shared with the [[audit-log]] /log book)
+- **Destroyed on drop** — `ServerEntityEvents.ENTITY_LOAD` discards a dropped Investigator/Command Log
+  `ItemEntity`, so it can't be left in a chest or stolen.
+- **Rank-gated right-click** — Investigator needs `smp.mod`; a thief can't use it.
+
 ## Related
-[[moderation-bans]] · [[Himawari-SMP]] · [[shared-supabase]]
+[[moderation-bans]] · [[audit-log]] · [[Himawari-SMP]] · [[shared-supabase]]
