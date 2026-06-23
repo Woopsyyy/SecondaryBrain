@@ -116,6 +116,21 @@ Fix: re-anchored `runTick` to `@At("HEAD")` of `tick()` (fires before the player
   `initGui()`/`clearElements()`; `ButtonGeneric(x,y,w,h,text,String...)`;
   `GuiTextFieldGeneric(x,y,w,h,Font)` + `getTextWrapper()/setTextWrapper()`.
 
+- **GUI keybind + malilib entrypoint (v2 deployed 2026-06-23):** added a Fabric `client` entrypoint
+  `baritone.gui.BaritoneFabricClient` (the only Fabric entrypoint; rest of mod is mixin-loaded) that
+  registers `BaritoneMalilibInit` (`IInitializationHandler`) with malilib's
+  `InitializationHandler.getInstance()`. `BaritoneHotkeys` (`IKeybindProvider`) exposes a `ConfigHotkey`
+  `openBaritoneGui` (default **B**) whose callback opens `BaritoneGui`; registered via
+  `InputEventHandler.getKeybindManager().registerKeybindProvider(...)`. Key is rebindable in malilib config.
+- **Mining/chopping progress HUD (deployed 2026-06-23):** `BaritoneHud implements
+  fi.dy.masa.malilib.interfaces.IRenderer`, registered with
+  `RenderEventHandler.getInstance().registerInGameGuiRenderer(...)` in `BaritoneMalilibInit`. Draws a bar
+  in `onExtractGuiOverlayPost(GuiContext, float, ProfilerFiller)` via `RenderUtils.drawRect(GuiContext,…)`
+  + `renderText(GuiContext,…)` (malilib handles the 26.2 extract-then-render pipeline, so no raw
+  GuiGraphicsExtractor needed). New `IMineProcess.getDesiredQuantity()`/`getMinedCount()` (impl in
+  `MineProcess`, counts matching inventory items via the mine `filter`); gated by new setting
+  `showMiningProgress` (default true).
+
 ## Known caveats / unverified
 
 - Cannot launch MC in the build environment, so **runtime is unverified**: mixin apply-time matching

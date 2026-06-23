@@ -21,6 +21,13 @@ Standalone Fabric **MC 26.2 / Java 25** client mod — fork of cabaletta/bariton
 [[NewBaritone]]. Built from WSL (same toolchain pattern as [[Himawari-SMP]]: LF gradlew, WSL-only
 builds, `deployToMods` → `.minecraft/mods`). MC 26.x is unobfuscated, so no mappings/remap.
 
+### TCC Portal (school management SPA)
+Talisay City College portal: **client-only Vite + React 19 (TS) SPA on Vercel**, backed **directly by
+Supabase** (anon key in browser) + 4 Edge Functions — **no backend server**, so **RLS + RPC grants are
+the whole security perimeter**. Top node: [[TCC-Portal]]. Supabase ref `tfxuzkumdjxpmmjkcjcp`
+(separate account from [[shared-supabase]]); local and prod share one DB. Roles: admin/teacher/office/
+student. Node runs in WSL via nvm; build with `vite build`.
+
 ## Dependency graph
 ```mermaid
 graph TD
@@ -34,6 +41,7 @@ graph TD
   Mod --> Combat[[combat-status]]
   Mod --> Sell[[sell-and-economy]]
   Mod --> Trial[[trial-item-expiry]]
+  TCC[[TCC-Portal]] --> TCCSupa[(Supabase tfxuzkumdjxpmmjkcjcp)]
 ```
 
 ## Evolution timeline
@@ -108,6 +116,27 @@ graph TD
   `getCommandManager().execute()`. malilib added as a `compileOnly` file dep + `depends` in
   fabric.mod.json. Hotkey deferred to v2. goto-accuracy (E) still pending one runtime data point from the
   user (can't launch MC here to reproduce).
+
+- **2026-06-23** — [[NewBaritone]] GUI completed + HUD: added a `B`-key hotkey to open the GUI (malilib
+  `IKeybindProvider` + a Fabric `client` entrypoint registering a malilib `IInitializationHandler`), and a
+  **mining/chopping progress HUD bar** (`BaritoneHud` IRenderer via `RenderEventHandler`, gated by new
+  `showMiningProgress` setting; new `IMineProcess.getMinedCount/getDesiredQuantity`). All compile-clean;
+  runtime still needs the user to verify (no MC launch in the build env).
+
+- **2026-06-23** — New project [[TCC-Portal]] added (Talisay City College management SPA). Deep
+  security/perf/analytics pass on the live Supabase DB (`tfxuzkumdjxpmmjkcjcp`):
+  - **CRITICAL account-takeover closed** — `app_ensure_auth_user_for_password/_for_hash` were
+    `anon`-callable (set any user's password → log in as admin). Revoked.
+  - **Data leak closed** — dropped legacy `login_user` (returned the users row *with password hash* to
+    `anon`). Revoked `anon` on all SECURITY DEFINER RPCs except a 4-fn login/public-stats allowlist;
+    locked the destructive `app_purge_expired_users()` + password oracle `app_password_matches_user()`.
+  - Gotcha: **live DB had drifted from `supabase/supabase.txt`** — audit the live DB, not the file; and
+    `revoke … from anon` ≠ revoking the inherited `PUBLIC` grant.
+  - Perf: +6 FK indexes; 16 `FOR ALL` write policies split to INSERT/UPDATE/DELETE (cleared all
+    flagged perf lints). Removed dead insecure `src/lib/supabase.ts`.
+  - Analytics: wired **PostHog** client (`posthog-js`) for login traffic/pageviews/auth funnels;
+    PostHog MCP server pending the user's `phx_` key. Migrations in repo `supabase/migrations/`;
+    residuals in `docs/SECURITY-FOLLOWUPS.md`.
 
 ## Deprecated nodes
 _(none yet)_
