@@ -35,7 +35,8 @@ hook, and load/save lifecycle. Commands in `command/ModCommands.java` (Brigadier
 - `combat/` — `CombatTracker` (PvP tag + boss bar; gates RTP/home/TPA). → [[combat-status]].
 
 **Items & world**
-- `trial/` — time-limited enchant tools + expiry destruction. → [[trial-item-expiry]].
+- `trial/` — time-limited enchant tools (3×3 / ore-vein / tree-fell / replant; right-click Fortune↔Silk
+  toggle on the pick/shovel/ore-miner) + expiry destruction. → [[trial-item-expiry]].
 - `item/` — `UnobtainableItems` (survival-obtainable filter, shared w/ anti-cheat).
 - `effect/` — `NightVisionStore` (persistent night vision).
 

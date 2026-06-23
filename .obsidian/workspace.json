@@ -11,13 +11,14 @@
             "id": "3b915e4b9d4fac7b",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Untitled.base",
-                "viewName": "Table"
+                "file": "SecondaryBrain/Himawari-SMP/shared-supabase.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Untitled"
+              "icon": "lucide-file",
+              "title": "shared-supabase"
             }
           }
         ]
@@ -204,8 +205,13 @@
   },
   "active": "3b915e4b9d4fac7b",
   "lastOpenFiles": [
-    "2026-06-22.md",
+    "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.41640.7b37165a798f",
+    "SecondaryBrain/NewBaritone/NewBaritone.md.tmp.41640.3949bee37253",
+    "SecondaryBrain/NewBaritone/NewBaritone.md",
+    "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.41640.2a88b445fc27",
+    "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.41640.bdf4af83ae57",
     "Untitled.base",
+    "2026-06-22.md",
     "Untitled.canvas",
     "SecondaryBrain/Himawari-SMP/moderation-bans.md",
     "SecondaryBrain/Himawari-SMP/audit-log.md",
@@ -231,15 +237,11 @@
     "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.2264.fe36a38cb815",
     "SecondaryBrain/Himawari-SMP/sell-and-economy.md",
     "SecondaryBrain/Himawari-SMP/combat-status.md",
-    "SecondaryBrain/Himawari-SMP/combat-status.md.tmp.2264.8fac9c34dc1c",
-    "SecondaryBrain/GLOBAL-PROJECT-MEMORY.md.tmp.6796.22d8b1225ecf",
-    "SecondaryBrain/Himawari-SMP/trial-item-expiry.md.tmp.6796.27c114ce0df4",
     "SecondaryBrain/Himawari-SMP/Himawari-SMP.md",
     "SecondaryBrain/START HERE/🔥 MASTER AI PROJECT ARCHITECT + SCALABLE MEMORY SYSTEM.md",
     "Untitled 1.canvas",
     "SecondaryBrain/Himawari/00-overview.md",
     "Obsidian link.md",
-    "Ai - skills/Himawari/deployment-patterns.md",
-    "Ai - skills/Himawari/security-patterns.md"
+    "Ai - skills/Himawari/deployment-patterns.md"
   ]
 }
